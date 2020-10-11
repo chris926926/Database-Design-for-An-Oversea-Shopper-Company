@@ -41,30 +41,30 @@ People(PeopleID, FirstName, LastName, WechatID, PhoneNumber, Address_City, Addre
        FirstName NOT NULL\
        LastName  NOT NULL\
        PhoneNumber Unique NOT NULL\
-       WechatID Unique  NOT NULL\
+       WechatID Unique  NOT NULL
        
 Consumer(ConsumerID)\
-       Foreign key ConsumerID    references  People\
+       Foreign key ConsumerID    references  People
        
 Employee(EmployeeID)\
-       Foreign Key    EmpolyeeID references People\
+       Foreign Key    EmpolyeeID references People
          
  Client(ClientID)\
-        Foreign Key      ClientID references People\
+        Foreign Key      ClientID references People
 
 Sales(SaleID, ClientID, EmployeeID, SKU, , SaleDate,SalePrice)\
         Foreign Key	        ClientID          	   references   	 Client\   
         Foreign Key        EmployeeID    	         references 	   Employee\  
         Foreign Key           SKU  	             	 references    	 Items\    
         SaleDate					   NOT NULL\
-        SalePrice	       		 NOT NULL\
+        SalePrice	       		 NOT NULL
    
  Items(SKU,ProductID)\
-        Foreign Key        ProductID      references   Product\ 
+        Foreign Key        ProductID      references   Product
 
 Shipping (ShippingID, ShippingDate, ShippingCompany, SKU, ShippingCost, ConsumerID, ReceivingDate)\
         Foreign Key          SKU                   references        Items\
-        Foreign Key         ConsumerID             references       Consumer\
+        Foreign Key         ConsumerID             references       Consumer
        
  Products(ProductID, ProductName, Brand, Category)\
         ProductName          NOT NULL
@@ -73,10 +73,10 @@ Shipping (ShippingID, ShippingDate, ShippingCompany, SKU, ShippingCost, Consumer
   Orders( OrderID, SKU, VendorID, OrdeDate, OrderPrice, PaymentMethod, OrderMehod)\
         Foreign key         SKU reference        Items\ 
         Foreign key         VendorID         reference Vendor\ 
-        NOT NULL           OrderPrice\
+        NOT NULL           OrderPrice
 
   Vendor(VendorID, VendorName)\
-       NOT NULL VendorName\
+       NOT NULL VendorName
 
 
                        
