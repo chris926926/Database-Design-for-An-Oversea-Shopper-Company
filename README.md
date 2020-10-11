@@ -72,16 +72,16 @@ Shipping (<ins>ShippingID</ins>, ShipDate, ShippingCompany, SKU, FreightCost, Co
       ShipDate			   NOT NULL  
      FreightCost			NOT NULL  
                    	
-Products (ProductID, ProductName, Brand, Category)  
-       ProductName			NOT NULL  
+Products (<ins>ProductID</ins>, ProductName, Brand, Category)  
+       ProductName NOT NULL   
 
-Orders (OrderID, SKU, VendorID, OrdeDate, OrderPrice, PaymentMethod, OrderMehod)    
+Orders (<ins>OrderID</ins>, SKU, VendorID, OrdeDate, OrderPrice, PaymentMethod, OrderMehod)    
       Foreign key 	SKU 		reference  	Items(SKU)  
       Foreign key 	VendorID 	reference 	Vendor	(VendorID)  
-      OrderPrice      NOT  NULL    	
-       ProductID       NOT  NULL    	
-       OrderDate       NOT  NULL  
-       VendorID        NOT  NULL    	
+      OrderPrice      NOT  NULL  
+      ProductID       NOT  NULL  
+      OrderDate       NOT  NULL  
+      VendorID        NOT  NULL      	
 
 Vendor(<ins>VendorID</ins>, VendorName)  
       VendorName   NOT  NULL    
