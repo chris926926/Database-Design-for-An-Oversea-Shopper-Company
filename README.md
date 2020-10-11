@@ -1,6 +1,6 @@
 # Database-Design-for-An-Oversea-Shopper-Company
 
-# One Page Business Proposal
+# One Page Business Proposal   📝
 
 ## Summary: 
 Propose to improve offering and pricing, build inventory management, increase
@@ -30,51 +30,53 @@ and customer-relationship management.
   2.  Development and deployment costs must not exceed $2000
   3.  Must be implemented by July 4th.
  
- 
+  ----------------------------
+  # UML Diagram
+  ![UML_diagram](https://user-images.githubusercontent.com/52415101/95671982-a5644300-0b51-11eb-8524-9e10067cf87c.png)
  ----------------------------
 
 # Logical Database Design
 
-People(PeopleID, FirstName, LastName, WechatID, PhoneNumber, Address_City, Address_Detailed)
-       FirstName NOT NULL
-       LastName  NOT NULL
-       PhoneNumber Unique NOT NULL
-       WechatID Unique  NOT NULL
+People(PeopleID, FirstName, LastName, WechatID, PhoneNumber, Address_City, Address_Detailed)\
+       FirstName NOT NULL\
+       LastName  NOT NULL\
+       PhoneNumber Unique NOT NULL\
+       WechatID Unique  NOT NULL\
        
-Consumer(ConsumerID)
-       Foreign key ConsumerID    references  People
+Consumer(ConsumerID)\
+       Foreign key ConsumerID    references  People\
        
-Employee(EmployeeID)
-       Foreign Key    EmpolyeeID references People
+Employee(EmployeeID)\
+       Foreign Key    EmpolyeeID references People\
          
- Client(ClientID)
-        Foreign Key      ClientID references People
+ Client(ClientID)\
+        Foreign Key      ClientID references People\
 
-Sales(SaleID, ClientID, EmployeeID, SKU, , SaleDate,SalePrice)
-        Foreign Key	        ClientID          	   references   	 Client   
-        Foreign Key        EmployeeID    	         references 	   Employee  
-        Foreign Key           SKU  	             	 references    	 Items    
-        SaleDate					   NOT NULL
-        SalePrice	       		 NOT NULL
+Sales(SaleID, ClientID, EmployeeID, SKU, , SaleDate,SalePrice)\
+        Foreign Key	        ClientID          	   references   	 Client\   
+        Foreign Key        EmployeeID    	         references 	   Employee\  
+        Foreign Key           SKU  	             	 references    	 Items\    
+        SaleDate					   NOT NULL\
+        SalePrice	       		 NOT NULL\
    
- Items(SKU,ProductID)
-        Foreign Key        ProductID      references   Product 
+ Items(SKU,ProductID)\
+        Foreign Key        ProductID      references   Product\ 
 
-Shipping (ShippingID, ShippingDate, ShippingCompany, SKU, ShippingCost, ConsumerID, ReceivingDate)
-        Foreign Key          SKU                   references        Items
-        Foreign Key         ConsumerID             references       Consumer
+Shipping (ShippingID, ShippingDate, ShippingCompany, SKU, ShippingCost, ConsumerID, ReceivingDate)\
+        Foreign Key          SKU                   references        Items\
+        Foreign Key         ConsumerID             references       Consumer\
        
- Products(ProductID, ProductName, Brand, Category)
+ Products(ProductID, ProductName, Brand, Category)\
         ProductName          NOT NULL
         
         
-  Orders( OrderID, SKU, VendorID, OrdeDate, OrderPrice, PaymentMethod, OrderMehod)
-        Foreign key         SKU reference        Items 
-        Foreign key         VendorID         reference Vendor 
-        NOT NULL           OrderPrice
+  Orders( OrderID, SKU, VendorID, OrdeDate, OrderPrice, PaymentMethod, OrderMehod)\
+        Foreign key         SKU reference        Items\ 
+        Foreign key         VendorID         reference Vendor\ 
+        NOT NULL           OrderPrice\
 
-  Vendor(VendorID, VendorName)
-       NOT NULL VendorName
+  Vendor(VendorID, VendorName)\
+       NOT NULL VendorName\
 
 
                        
